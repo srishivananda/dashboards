@@ -13,6 +13,9 @@ with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
 websites = config['websites']
+timeout_seconds = config.get('timeout_seconds', 10)
+refresh_interval_seconds = config.get('refresh_interval_seconds', 60)
+max_history_length = config.get('max_history_length', 20)
 
 # Initialize rich console for colorful terminal output
 console = Console()
@@ -21,7 +24,7 @@ console = Console()
 # Returns True if the website is up (status code 200), otherwise False
 def check_status(website):
     try:
-        response = requests.get(website, timeout=10)
+        response = requests.get(website, timeout=timeout_seconds)
         return response.status_code == 200
     except requests.RequestException:
         return False
@@ -39,6 +42,8 @@ with Live(console=console, refresh_per_second=1):
             results = executor.map(check_status, websites)
             for website, is_up in zip(websites, results):
                 status_history[website].append(is_up)
+                if len(status_history[website]) > max_history_length:
+                    status_history[website] = status_history[website][-max_history_length:]
         # Clear the console for the next update
         console.clear()
         # Print the status of each website
@@ -47,5 +52,5 @@ with Live(console=console, refresh_per_second=1):
                 f"[{'green' if status else 'red'}]●[/{'green' if status else 'red'}]" for status in statuses
             )
             console.print(status_line)
-        # Wait for 60 seconds before the next check
-        time.sleep(60)
+        # Wait for configured seconds before the next check
+        time.sleep(refresh_interval_seconds)
