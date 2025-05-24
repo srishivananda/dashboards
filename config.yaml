@@ -4,3 +4,7 @@ websites:
   - https://www.google.com
   - https://www.amazon.com
   - https://www.microsoft.com
+
+timeout_seconds: 5
+refresh_interval_seconds: 30
+max_history_length: 15
