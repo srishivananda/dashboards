@@ -188,7 +188,7 @@ class WebsiteMonitor:
                 
                 # Create history indicators
                 history_indicators = " ".join(
-                    f"[{'green' if status['is_up'] else 'red'}]●[/{'green' if status['is_up'] else 'red'}]" 
+                    f"[{'green' if status['is_up'] else 'red'}]■[/{'green' if status['is_up'] else 'red'}]" 
                     for status in statuses
                 )
                 
