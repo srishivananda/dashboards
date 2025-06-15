@@ -1,6 +1,76 @@
+# Website Dashboard Configuration
+
+# List of websites to monitor
 websites:
+  # Banking
   - https://www.chase.com
   - https://www.jpmorgan.com
-  - https://www.google.com
-  - https://www.amazon.com
-  - https://www.microsoft.com
+  - https://www.bankofamerica.com
+  - https://www.wellsfargo.com
+  - https://www.citibank.com
+  - https://www.capitalone.com
+  - https://www.usbank.com
+  - https://www.pnc.com
+  - https://www.tdbank.com
+  - https://www.hsbc.com
+  
+  # Investment & Trading
+  - https://www.fidelity.com
+  - https://www.vanguard.com
+  - https://www.schwab.com
+  - https://www.etrade.com
+  - https://www.tdameritrade.com
+  - https://www.robinhood.com
+  - https://www.interactivebrokers.com
+  - https://www.merrilledge.com
+  - https://www.sofi.com/invest
+  - https://www.webull.com
+  
+  # Payment Processors
+  - https://www.paypal.com
+  - https://www.venmo.com
+  - https://www.stripe.com
+  - https://www.square.com
+  - https://www.adyen.com
+  - https://www.authorize.net
+  - https://www.worldpay.com
+  - https://www.checkout.com
+  
+  # Digital Banking & Neobanks
+  - https://www.chime.com
+  - https://www.revolut.com
+  - https://www.n26.com
+  - https://www.monzo.com
+  - https://www.ally.com
+  - https://www.varo.com
+  
+  # Lending & Credit
+  - https://www.lendingclub.com
+  - https://www.upstart.com
+  - https://www.affirm.com
+  - https://www.credible.com
+  - https://www.sofi.com
+  - https://www.prosper.com
+  
+  # Cryptocurrency
+  - https://www.coinbase.com
+  - https://www.binance.com
+  - https://www.kraken.com
+  - https://www.gemini.com
+  - https://www.blockfi.com
+  
+  # Insurance & Insurtech
+  - https://www.lemonade.com
+  - https://www.policygenius.com
+  - https://www.oscar.com
+  - https://www.hippo.com
+  - https://www.root.com
+
+# Check interval in seconds (default: 60)
+check_interval: 30
+
+# Request timeout in seconds (default: 10)
+timeout: 5
+
+# Number of history entries to display (default: 10)
+history_size: 8
