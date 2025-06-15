@@ -65,12 +65,21 @@ websites:
   - https://www.oscar.com
   - https://www.hippo.com
   - https://www.root.com
+  
+  # Tech Companies
+  - https://www.google.com
+  - https://www.amazon.com
+  - https://www.microsoft.com
 
+# Configuration parameters (supporting both naming conventions)
 # Check interval in seconds (default: 60)
 check_interval: 30
+refresh_interval_seconds: 30
 
 # Request timeout in seconds (default: 10)
 timeout: 5
+timeout_seconds: 5
 
 # Number of history entries to display (default: 10)
 history_size: 8
+max_history_length: 15
